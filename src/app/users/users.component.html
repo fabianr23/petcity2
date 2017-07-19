@@ -1,0 +1,105 @@
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Introduction Row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Usuarios
+                <small>Administrador</small>
+            </h1>
+           
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading ">
+            <div class="row">
+                <h4>Filtrar por: </h4>
+            </div>
+             <div class="row">
+                <div class="col-4">
+                    <form (ngSubmit)="getSearchUserByName($event)">
+                        <div class="input-group">
+                           <input type="text" class="form-control" id="nombreBuscar" placeholder="Nombre">
+                          <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit" >Buscar</button>
+                          </span>
+                        </div>
+                    </form>
+                       
+                </div>
+                <div class="col-4">
+                    <form (ngSubmit)="getSearchUserByCorreo($event)">
+                        <div class="input-group">
+                           <input type="text" class="form-control" id="correoBuscar" placeholder="Correo">    
+                          <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit" >Buscar</button>
+                          </span>
+                        </div>
+                    </form>
+                    
+                </div>
+                <div class="col-4">
+                    <select class="form-control busqueda" >
+                        <option id="todos">Todos</option>
+                        <option id="false">Bloqueados</option>
+                        <option id="true">Activos</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div class="panel-body">
+            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+                    <tr>
+                        <th>Documento</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Bloqueado</th>
+                        <th>Rol</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="odd gradeX" *ngFor="let user of users">
+                        <td>
+                            {{user.document}}
+                        </td>
+                        <td>
+                            {{user.name_user}}
+                        </td>
+                        <td>
+                            {{user.email}}
+                        </td>
+                        <td>
+                            <select class="form-control busqueda" >
+                                <option id="true" [selected]="user.block">True</option>
+                                <option id="false" [selected]="user.block == false">False</option>
+                            </select>
+                            
+                        </td>
+                        <td>
+                            <select class="form-control busqueda" >
+                                <option id="admin" [selected]="user.rol == 'admin'">Administrador</option>
+                                <option id="company" [selected]="user.rol == 'company'">Compañia</option>
+                                <option id="cyustomer" [selected]="user.rol == 'customer'">Cliente</option>
+                                <option id="cyustomer" [selected]="user.rol == 'company_customer'">Cliente Compañia</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+</div>
+<!-- /.container -->
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>

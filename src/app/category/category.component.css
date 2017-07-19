@@ -1,0 +1,26 @@
+.todas-categorias {
+    width: 100%;
+    color: #3FD2BF;
+    font-size: 160%;
+    padding: 7px 15px;
+    margin-bottom: 35px;
+    border-radius: 7px;
+}
+
+.product-letra{
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: inherit;
+    margin-top: 5px;
+    max-width: 150px;
+    overflow: hidden;
+    padding-left: 45%;
+}
+
+.product-valor{
+    font-size: 20px;
+    color: #3FD2BF;
+    margin-top: 5px;
+    padding-left: 45%;
+}
+

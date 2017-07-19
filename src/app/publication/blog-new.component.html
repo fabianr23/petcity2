@@ -1,0 +1,44 @@
+<div class="barra-titulo">
+  Nueva publicación
+</div>
+<div class="breadcrumbs">
+  Home/Productos/nueva-publicacion
+</div>
+
+<div class="cont-publication col-md-12">
+  <div class="info-publication col-md-12">
+    <div class="cover-background">
+      <div class="container-form col-md-5">
+        <form (ngSubmit)="createPublication(publication)" #publicationForm='ngForm' enctype="multipart/form-data" id="form-newblog">
+
+          <div class="form-group">
+            <label for="publication-title">
+              <h3> Crear una nueva publicación </h3>
+            </label>
+            <input type="text" class="form-control" id="title" required name="title" placeholder="Título de la publicación" #title='ngModel' [(ngModel)]='publication.title'>
+          </div>
+
+          <div class="form-group">
+            <textarea form="form-newblog" class="form-control" id="body_publication" required name="body_publication" placeholder="Mensaje de la publicación ..." #body_publication='ngModel' [(ngModel)]='publication.body_publication'>
+            </textarea>
+          </div>
+
+          <!--<div class="form-group">
+            <input type="text" class="form-control" id="user_id" required name="user_id" placeholder="ID de usuario" #user_id='ngModel' [(ngModel)]='publication.user_id'>
+          </div>-->
+
+          <div class="form-group">
+            <!--<label for="publication-image_publication">
+              <h5> Imagen de la publicación </h5>
+            </label>-->
+            <span class="btn btn-success btn-file">
+              Selecciona una imagen para la publicación <input type="file" class="form-control" id="image_publication" name="image_publication" #image_publication='ngModel' [(ngModel)]='publication.image_publication'>
+            </span>
+            </div>
+
+          <button type="submit" class="btn btn-primary btn-crear" [disabled]="!publicationForm.form.valid">Crear publicacion</button>
+        </form>
+  </div>
+  
+  <div class="clear"></div>
+</div>

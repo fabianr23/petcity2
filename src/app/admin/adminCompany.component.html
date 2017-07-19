@@ -1,0 +1,89 @@
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Introduction Row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Administrador
+                <small>Compañias</small>
+            </h1>
+
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading ">
+            <div class="row">
+                <h4>Filtrar por: </h4>
+            </div>
+             <div class="row">
+                <div class="col-4">
+                    <form (ngSubmit)="getSearchUserByName($event)">
+                        <div class="input-group">
+                           <input type="text" class="form-control" id="nombreBuscar" placeholder="Nombre">
+                          <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit" >Buscar</button>
+                          </span>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="col-4">
+                    <select class="form-control busqueda" >
+                        <option id="todos">Todos</option>
+                        <option id="false">Bloqueados</option>
+                        <option id="true">Activos</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div class="panel-body">
+            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Ciudad</th>
+                        <th>Direccion</th>
+                        <th>Telefono</th>
+                        <th>Bloqueado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="odd gradeX" *ngFor="let company of companies">
+                        <td>
+                            {{company.name_comp}}
+                        </td>
+                        <td>
+                            {{company.city}}
+                        </td>
+                        <td>
+                            {{company.address}}
+                        </td>
+                        <td>
+                            {{company.phone}}
+                        </td>
+                        <td>
+                            <select class="form-control busqueda" >
+                                <option id="true" [selected]="company.active == false">True</option>
+                                <option id="false" [selected]="company.active">False</option>
+                            </select>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+</div>
+<!-- /.container -->
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>

@@ -1,0 +1,91 @@
+<div class="row" *ngIf="company">
+    <div class="col-md-7">
+        <a href="#">
+            <img class="img-responsive" src="{{company.company.image_company.url}}" alt="">
+        </a>
+    </div>
+    <div class="col-md-5">
+        <h3>{{ company.company.name_comp }}</h3>
+        <h4>{{company.company.city}}</h4>
+        <a class="btn" ><span class="glyphicon glyphicon-hand-right badge" aria-hidden="true"> {{company.company.c_votes_like}}</span></a>
+        <a class="btn" ><span class="glyphicon glyphicon-thumbs-down badge" aria-hidden="true"> {{company.company.c_votes_dislike}}</span></a>
+        <hr>
+        <p><strong>Nit:</strong> {{company.company.nit}}</p>
+        <p><strong>Direccion:</strong> {{company.company.address}}</p>
+        <p><strong>Telefono:</strong> {{company.company.phone}}</p>
+        <hr>
+        <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="modal" data-target="#myModal">
+          <span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>
+        </button>
+
+        <div class="modal fade " id="myModal" role="dialog">
+            <div class="modal-dialog">
+            
+              <!-- Modal content-->
+              <div class="modal-content ">
+                <div class="modal-header myModal">
+                  <h4 class="modal-title">Editar Compañia</h4>
+                </div>
+                <form>
+                    <div class="modal-body col-12">
+                        <div class="form-group">
+                            <label for="name">Nombre:</label>
+                            <input type="email" class="form-control" id="name" value="{{ company.company.name_comp }}">
+                          </div>
+                          <div class="form-group">
+                            <label for="city">Ciudad:</label>
+                            <input type="text" class="form-control" id="city" value="{{company.company.city}}">
+                          </div>
+                        <div class="form-group">
+                            <label for="nit">Nit:</label>
+                            <input type="text" class="form-control" id="nit" value="{{company.company.nit}}">
+                          </div>
+                        <div class="form-group">
+                            <label for="address">Direccion:</label>
+                            <input type="text" class="form-control" id="address" value="{{company.company.address}}">
+                          </div>
+                        <div class="form-group">
+                            <label for="phone">Telefono:</label>
+                            <input type="text" class="form-control" id="phone" value="{{company.company.phone}}">
+                          </div>
+                    </div>
+                    <div class="modal-footer col-12">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+              </div>
+              
+            </div>
+          </div>
+
+        
+    </div>
+
+    <div class="barra-titulo barra-verde">
+        Productos
+    </div>
+
+    <div class="pagination col-12"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
+
+    <div class="caja-producto" *ngFor="let product of company.company.products | paginate: { itemsPerPage: 8, currentPage: p }">
+      <div class="img-producto">
+        <img src="images/producto4.jpg" />
+      </div>
+      <div class="txt-producto">
+        <h2> {{product.name_product}} </h2>
+        <p> {{product.description}} </p>
+        <br>
+        <span class="precio-home"> ${{product.value}} </span>
+      </div>
+      <a class="link-añadir" href="#">
+        <div class="btn-añadir">
+        añadir al carro
+        </div>
+      </a>
+    </div>
+
+    <div class="pagination col-12"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
+
+
+</div>

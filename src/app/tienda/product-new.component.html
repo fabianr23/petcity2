@@ -1,0 +1,61 @@
+<div class="barra-titulo">
+  Producto Nuevo
+</div>
+<div class="breadcrumbs">
+  Home/Productos/nuevo-producto
+</div>
+
+<div class="cont-product col-md-12">
+  <div class="info-prod col-md-10">
+    <form (ngSubmit)="createProduct(product)" #productForm='ngForm'>
+
+      <div class="form-group">
+        <label for="product-name">
+          <h3> Nombre del producto </h3>
+        </label>
+        <input type="text" class="form-control" id="name_product" required name="name_product" placeholder="Nombre del producto" #name_product='ngModel' [(ngModel)]='product.name_product'>
+      </div>
+
+      <div class="form-group">
+        <label for="product-name">
+          <h3> Descripción del producto </h3>
+        </label>
+        <input type="text" class="form-control" id="description" required name="description" placeholder="Descripción del producto" #name_product='ngModel' [(ngModel)]='product.description'>
+      </div>
+
+      <div class="form-group">
+        <label for="product-name">
+          <h3> Valor del producto </h3>
+        </label>
+        <input type="text" class="form-control" id="value" required name="value" placeholder="Nombre del producto" #name_product='ngModel' [(ngModel)]='product.value'>
+      </div>
+
+      <div class="form-group">
+        <label for="product-name">
+          <h3> Cantidad disponible del producto </h3>
+        </label>
+        <input type="text" class="form-control" id="amount" required name="amount" placeholder="Cantidad del producto" #name_product='ngModel' [(ngModel)]='product.amount'>
+      </div>
+
+      <div class="form-group">
+        <label for="product-name">
+          <h3> Id de la compañia </h3>
+        </label>
+        <input type="text" class="form-control" id="company_id" required name="company_id" placeholder="ID de la compañia" #name_product='ngModel' [(ngModel)]='product.company_id'>
+      </div>
+
+      <div class="form-group">
+        <label for="product-name">
+          <h3> status </h3>
+        </label>
+        <input type="text" class="form-control" id="status" required name="status" placeholder="status" #name_product='ngModel' [(ngModel)]='product.status'>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-crear" [disabled]="!productForm.form.valid">Crear producto</button>
+    </form>
+  </div>
+  <div class="lateral-prod col-md-2">
+     productos recientes
+  </div>
+  <div class="clear"></div>
+</div>

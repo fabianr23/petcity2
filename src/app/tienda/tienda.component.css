@@ -1,0 +1,150 @@
+.barra-titulo {
+    width: 100%;
+    height: 65px;
+    padding: 11px 35px;
+    margin: 20px 0px;
+    border-radius: 10px;
+    font-size: 26px;
+    color: #000;
+    text-transform: uppercase;
+    font-family: cursive;
+}
+.contenedor-producto{
+    width: 90%;
+    padding: 10px;
+    float: left;
+    text-align: center;
+    box-shadow: 0 0 10px 5px #DDDDDD;
+    margin: 10px 0% 20px 4%;
+    min-width: 200px;
+}
+
+.categoria-link{
+    color: #4B4B4B;
+}
+
+.ver-producto{
+    text-align: center;
+}
+.product-letra{
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: inherit;
+    margin-top: 5px;
+    max-width: 150px;
+    overflow: hidden;
+}
+.product-letra-mas-vendidos{
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: inherit;
+    max-width: 150px;
+    overflow: hidden;
+}
+
+.product-valor{
+    font-size: 20px;
+    color: #3FD2BF;
+    
+}
+
+.product-valor-mas-vendidos{
+    font-size: 15px;
+    color: #3FD2BF;
+}
+
+.breadcrumbs {
+    width: 100%;
+    background: #ddd;
+    padding: 7px 15px;
+    margin-bottom: 35px;
+    border-radius: 7px;
+}
+
+.tienda-productos {
+    width: 100%;
+    color: #3FD2BF;
+    font-size: 160%;
+    padding: 7px 15px;
+    margin-bottom: 35px;
+    border-radius: 7px;
+}
+
+.producto{
+    width: 450%;
+}
+
+.titulos-productos {
+    width: 100%;
+    font-weight:bold;
+    padding-top: 3%;
+    font-size: initial;
+}
+.opciones-productos {
+    width: 100%;
+    padding-top: 3%;
+    padding-left: 4%;
+    font-size: initial;
+}
+
+.detalles-producto{
+     width: 100%;
+}
+.productos-destacados{
+    padding-left: 10%;
+}
+
+.pagination{
+    margin-top: -2%;
+    margin-bottom: 1%;
+}
+
+.images-producto img{
+    width: 80%
+}
+a.link-añadir {
+    margin: 0 auto;
+}
+.contenedor-producto img {
+    padding: 3px;
+    border-radius: 2px;
+    box-shadow: 0 0 1px;
+}
+.btn-añadir {
+    background: #3F3F3F;
+    
+}
+.img{
+    width: 55%;
+    
+}
+.imgMasVendidos{
+    width: 107%;
+    margin-left: 15%;
+    
+}   
+
+.busqueda{
+    height: 31px !important;
+}
+
+.producto-mas-vendido{
+    width: 60%;
+    margin-left: 0%;
+}
+a{
+   cursor: pointer; 
+}
+
+.todos-productos{
+    margin-top: 5%;
+}
+
+.imgVendidos{
+    width: 100%;
+    max-width: 170px;
+}
+.img-producto {
+    height: 150px;
+}
+

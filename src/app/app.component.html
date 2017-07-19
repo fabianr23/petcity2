@@ -1,0 +1,90 @@
+<div class="container">
+<div class="header-mascotas col-md-12">
+  <div class="logo-pety col-md-8">
+    <img src="images/logo-pety.png" />
+  </div>
+  <div class="container-auth col-md-4">
+    <a routerLink='/register'>
+      <div class="signin-btn" *ngIf="!(authService.userSignedIn$ | async)">
+        <button type="button" class="btn btn-primary">Registrarse</button>
+      </div>
+    </a>
+    <a routerLink='/login'>
+      <div class="login-btn" *ngIf="!(authService.userSignedIn$ | async)">
+        <button type="button" class="btn btn-success">Ingresar</button>
+      </div>
+    </a>
+    <a (click)="logOut()">
+      <div class="logout-btn" *ngIf="(authService.userSignedIn$ | async)">
+        <button type="button" class="btn btn-danger">Cerrar sesión</button>
+      </div>
+    </a>
+    <!--<div *ngIf="authTokenService.currentUserData" class="col l8 s12" >
+      <li class="collection-item">Email:  <b>{{authTokenService.currentUserData.email}}</b></li>
+      <li class="collection-item">rol:  <b>{{authTokenService.currentUserData.rol}}</b></li>
+    </div>-->
+  </div>
+  <div class="clear"></div>
+</div>
+<nav class="navbar navbar-toggleable-md  navbar-inverse bg-inverse navegacion-mascotas">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink='/home'>Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink='/products'>Tienda</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink='/blog'>Blog</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink='/contact'>Contacto</a>
+      </li>
+      <li class="nav-item active" *ngIf='(authTokenService.currentUserData?.rol == "admin")'>
+        <a class="nav-link" routerLink='/admin-user'>Admin</a>
+      </li>
+      <li class="nav-item active" *ngIf='(authTokenService.currentUserData?.rol == "customer")'>
+        <a class="nav-link" routerLink='/profile'>Profile</a>
+      </li>
+      <li class="nav-item active" *ngIf='(authTokenService.currentUserData?.rol == "company_customer")'>
+        <a class="nav-link" routerLink='/companies'>Compañia</a>
+      </li>
+      <!--<li class="nav-item active">
+        <a class="nav-link " routerLink='/categories'>Categorias de Productos</a>
+      </li>-->
+    </ul>
+    <!--<form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>-->
+    <!--<div class="tienda-online">
+      Carrito de compras
+    </div>-->
+  </div>
+</nav>
+
+
+<router-outlet></router-outlet>
+
+</div>
+<div class="footer">
+   
+    <div class="enlaces-footer">
+      <ul>
+        <li>
+          Inicio
+        </li>
+        <li>
+          Link
+        </li>
+        <li>
+          Contacto
+        </li>
+      </ul>
+    </div>
+  </div>

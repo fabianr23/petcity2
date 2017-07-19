@@ -1,0 +1,51 @@
+<div class="container-profile col-md-12">
+    <div class="profile-center">
+      <div class="img-profile">
+        <img src="{{authTokenService.currentUserData.image.url}}" alt="perfil de Usuario" />
+      </div>
+      <div class="tit-profile">
+        {{authTokenService.currentUserData.name_user}}
+      </div>
+      <div class="info-profile">
+        {{authTokenService.currentUserData.email}}
+      </div>
+      <div class="menu-profile">
+        <!--<div class="btn-menu-profile">
+          <a (click)="profile">
+            <div class="btn-menu-perfil"> Editar perfil </div>
+          </a>
+        </div>-->
+        <div class="btn-menu-profile">
+          <a (click)="goToMisProductos()">
+            <div class="btn-menu-perfil"> Ver mis productos </div>
+          </a>
+        </div>
+        <div class="btn-menu-profile">
+          <a (click)="goToMisLikes()">
+            <div class="btn-menu-perfil"> Ver productos que me han gustado </div>
+          </a>
+        </div>
+        <div class="btn-menu-profile">
+          <a (click)="goToMisComments()">
+            <div class="btn-menu-perfil"> Ver productos que he comentado </div>
+          </a>
+        </div>
+        <div class="btn-menu-profile">
+          <a (click)="goToMisBlogs()">
+            <div class="btn-menu-perfil"> Ver mis publicaciones </div>
+          </a>
+        </div>
+        <div class="btn-menu-profile">
+          <a (click)="goToMisBlogsLikes()">
+            <div class="btn-menu-perfil"> Ver publicaciones que me gustaron </div>
+          </a>
+        </div>
+        <div class="btn-menu-profile">
+          <a (click)="goToMisBlogsComments()">
+            <div class="btn-menu-perfil"> Ver publicaciones que he comentado </div>
+          </a>
+        </div>
+        <div class="clear"> </div>
+      </div>
+    </div>
+</div>

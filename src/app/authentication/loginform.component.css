@@ -1,0 +1,64 @@
+/* -- estilos formulario -- */
+.clear {
+    margin-bottom: 25px;
+}
+.container-form {
+    background: rgba(17, 82, 112, 0.9);
+    padding: 20px;
+    margin: 40px;
+    box-shadow: 0 0 15px #000;
+    border-radius: 8px;
+    text-align: center;
+}
+.container-form h3 {
+    color: #fff;
+}
+.cover-background {
+    /*background-color: rgba(0, 0, 0, 0.3);*/
+    width: 100%;
+}
+.info-publication {
+    float: left;
+    background-image: url(/images/background-form5.jpg);
+    background-size: cover;
+    padding: 0px;
+}
+.info-publication .form-group{
+    width: 45%;
+    min-width: 350px;
+    margin: 20px auto;
+    float: none;
+}
+textarea#body_publication {
+    height: 165px;
+}
+.info-publication h5 {
+    color: #fff;
+}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: pointer;
+    display: block;
+    
+}
+textarea#details {
+    height: 145px;
+}
+label{
+    color: #fff;
+}
+

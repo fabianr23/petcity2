@@ -1,0 +1,44 @@
+<div class="barra-titulo">
+	Publicaciones
+</div>
+
+<div class="breadcrumbs">
+	Home/blog
+</div>
+
+<div class="container">
+	<div class="col-12 contenedor-publicaciones">
+		<div class="blog-title" >
+			<u>Novedades de la comunidad</u>
+		</div>
+
+		<div class=" col-12">
+			<div class="contenedor-publicacion" *ngFor="let publication of publications | paginate: { itemsPerPage: 3, currentPage: p }">
+
+				<div class="img-publicacion col-md-3">
+					<img *ngIf="(publication.image_publication?.url != null)" class="img-responsive img-center img img-prod-profile" src="{{publication.image_publication?.url}}" alt="{{publication.title}}">
+        			<img *ngIf="(publication.image_publication?.url == null)" class="img-responsive img-center img img-prod-profile" src="images/interrogacion.png" alt="{{publication.title}}">	
+				</div>
+				<div class="detalles-publicacion col-md-9">
+					<div class="descripcion">
+						<strong>{{publication.title}}</strong>
+						<br><br>
+						{{publication.body_publication}}
+					</div>
+					<a class="link-añadir" (click)="goToPublication(publication)">
+					<div class="btn-añadir">
+						Leer más
+					</div>
+					</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+				<!--</div>-->
+		</div>
+	</div>
+
+	
+
+<div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
+

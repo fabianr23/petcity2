@@ -1,0 +1,27 @@
+<div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Compañias
+                </h1>
+                
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-lg-4 col-sm-6 text-center" *ngFor="let company of companies | paginate: { itemsPerPage: 9, currentPage: p }">
+                <img class="img-circle img-responsive img-center" src="{{company.image_company.url}}" alt="">
+
+                <a class="btn" (click)="likes($event, 'like',company.id )"><span class="glyphicon glyphicon-hand-right badge like" aria-hidden="true"> {{company.c_votes_like}}</span></a>
+                <a class="btn" (click)="likes($event, 'dislike',company.id )"><span class="glyphicon glyphicon-thumbs-down badge" aria-hidden="true"> {{company.c_votes_dislike}}</span></a>
+
+
+                <h3>{{company.name_comp}}
+                </h3>
+                <h5>Direccion: {{company.address}}</h5>
+                <h5>Ciudad: {{company.city}}</h5>
+                <h5>Telefono: {{company.phone}}</h5>
+                <h5>Tipo: {{company.phone}}</h5>
+                <a  (click)="goToCompany(company)">
+			        <button type="button" class="btn btn-primary btn-añadir">Ver Compañia</button>
+			    </a>
+            </div>
+        </div>

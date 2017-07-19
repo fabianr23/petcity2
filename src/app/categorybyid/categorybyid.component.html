@@ -1,0 +1,29 @@
+<div *ngIf="category">
+  <div class="panel panel-info"> 
+      <div class="panel-heading titulo"> 
+          Categoria {{category.categories[0].name_category}}
+      </div> 
+      <div class="panel-body"> 
+        {{category.categories[0].details}}
+      </div> 
+  </div>
+  <div class="barra-titulo barra-verde">
+    Productos
+  </div>
+    	<div class="caja-producto" *ngFor="let product of products">
+      <div class="img-producto">
+        <img class="img" src="{{product.images[0]?.name_image.url}}" />
+      </div>
+      <div class="txt-producto">
+        <h2> {{product.name_product}} </h2>
+        <p> {{product.description}} </p>
+        <br>
+        <span class="precio-home"> ${{product.value}} </span>
+      </div>
+      <a class="link-añadir" (click)="goToProduct(product)">
+        <div class="btn-añadir">
+        Ver Producto
+        </div>
+      </a>
+    </div>
+</div>

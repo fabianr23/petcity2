@@ -1,0 +1,120 @@
+<div *ngIf="product">
+<div class="barra-titulo">
+  Producto {{product.product.name_product}}
+</div>
+<div class="breadcrumbs">
+  Home/Productos/{{product.product.name_product}}
+</div>
+
+<div class="cont-product col-md-12">
+  <div class="info-prod col-md-10">
+    <div class="col-md-12">
+      <div class="img-prod col-md-6">
+        <img src="{{product.product.images[0].name_image.url}}" alt="producto1" />
+      </div> 
+      <div class="datos-prod col-md-6">
+        <div class="txt-producto">
+            <span class="precio-home"> ${{product.product.value}} c/u </span>
+            <div style="width:100%; height: 10px;"></div>
+            <p> {{product.product.description}}</p>
+        </div>
+        <div class="btns-productos col-md-12">
+            <div class="col-6 align-left">
+              <p> Cantidad de productos: </p>
+              <select id="prod-seleccionados">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+            <div class="col-6 align-left">
+              <div class="btn-añadir disponibles">
+              {{product.product.amount}}  productos disponibles
+              </div>
+            </div>
+            <div class="clear"></div>
+            <div class="col-12 align-left">
+              <a class="link-añadir" href="#">
+                <div class="btn-añadir enviar-interno">
+                añadir al carro
+                </div>
+              </a>
+            </div>
+        </div>
+        <div class="clear"> </div>
+      </div> 
+      <div class="clear"> </div>
+    </div>
+    <div class="col-md-12">
+      <!--<div class="barra-titulo barra-verde">
+        Información adicional
+      </div>
+      <div class="comentarios-prod">
+      </div>-->
+      <div class="barra-titulo barra-roja">
+        Productos relacionados
+      </div>
+      <div class="cont-productos prod-recientes">
+        <div class="caja-producto" *ngFor="let product of productsRelated">
+          <div class="img-producto">
+            <img class="img" src="{{product.images[0]?.name_image.url}}" />
+          </div>
+          <div class="txt-producto">
+            <h2> {{product.name_product}} </h2>
+            <p> {{product.description}} </p>
+            <br>
+            <span class="precio-home"> ${{product.value}} </span>
+          </div>
+          <a class="link-añadir" (click)="goToProduct(product)">
+            <div class="btn-añadir">
+            Ver Producto
+            </div>
+          </a>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+  <div class="lateral-prod col-md-2">
+			<!--<span class="titulos-productos">Categoria de Productos</span>
+			<div class="opciones-productos" *ngFor="let category of categories">
+				<ul class="nav nav-pills">
+					<li role="presentation" class="categoria-link"><a (click)="goToCategory(category)">{{category.name_category}}</a></li>
+				</ul>
+			</div>
+
+			<span class="titulos-productos">Productos Mas Vendidos</span>
+
+			<div class="opciones-productos" >
+				<div class="row" *ngFor="let product of productsMostSales; let i = index">
+					<div ng-if="i < 3">
+						<a class="thumbnail" (click)="goToProduct(product)">
+							<div class="row">
+                <div class="col-5">
+                    <img src="/images/producto4.jpg" class="img">
+                </div>
+                <div class="col-7">
+                  <div class="row product-letra-mas-vendidos">
+                      {{product.name_product}}
+                  </div>
+                  <div class="row product-valor-mas-vendidos">
+                      ${{product.value}}
+                  </div>
+                </div>
+							</div>
+						</a>
+					</div>		
+				</div>
+			</div>-->
+		
+  </div>
+  <div class="clear"></div>
+</div>
+</div>

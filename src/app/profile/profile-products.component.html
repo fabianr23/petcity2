@@ -1,0 +1,37 @@
+<div *ngIf="(authTokenService.currentUserData)" class="col l8 s12" >
+  <div class="banner-users">
+  <div class="tit-banner-company">
+    Mis productos
+  </div>
+</div>
+<div class="breadcrumbs">
+  Home / Usuarios / {{authTokenService.currentUserData.name_user}}
+</div>
+<div class="col-md-5">
+  <app-menu-profile> </app-menu-profile>
+</div>
+<div class="col-md-7">
+  <div class="titulo-profile">Productos comprados</div>
+    
+    <div class="container-profile col-md-12">
+        
+    <div class="col-lg-4 col-sm-6 text-center" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }">
+      <div class="cuerpo-producto">
+        <img *ngIf="(product.images)" class="img-responsive img-center img img-prod-profile" src="{{product.images[0]?.name_image.url}}" alt="{{product.name_product}}">
+        <img *ngIf="!(product.images)" class="img-responsive img-center img img-prod-profile" src="images/interrogacion.png" alt="{{product.name_product}}">
+        <a  (click)="goToProduct(product)">
+          <h3> {{product.name_product}} </h3>
+        </a>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="info-no perro" *ngIf="(products == '' || products == Null)">
+      <div class="nota">
+        <strong> ¡Aún no has comprado ningún producto! </strong>
+      </div>
+    </div>
+    <div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
+    </div>
+        
+  </div>
+</div>

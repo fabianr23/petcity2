@@ -1,0 +1,171 @@
+.banner-users {
+    background-image: url(/images/banner-user.jpg);
+    background-size: cover;
+    padding: 0px;
+    height: 250px;
+}
+.tit-banner-company {
+    font-size: 48px;
+    color: #fff;
+    text-shadow: 0 0 10px #000;
+    padding-top: 100px;
+    padding-left: 15%;
+    font-family: sans-serif;
+}
+.img-profile img {
+    width: 80%;
+    border-radius: 50%;
+    border: 8px #ccc solid;
+}
+.btn-menu-perfil {
+    width: 100%;
+    /* line-height: 23px; */
+    text-align: center;
+    margin: 8px auto 0px auto;
+    /* border-radius: 70px; */
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    background-color: #3343b7;
+}
+.menu-profile a {
+    text-decoration: none;
+}
+.tit-profile {
+    font-size: 32px;
+    margin: 10px;
+    color: #fff;
+    text-align: center;
+}
+.info-profile {
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 23px;
+}
+.profile-right {
+    background: #fff;
+    padding: 35px;
+}
+.img-profile {
+    text-align: center;
+}
+.contenedor-detalles {
+    float: left;
+}
+.detalles-producto {
+    width: 90%;
+    margin: 0px auto 25px;
+    text-align: center;
+}
+.detalles-producto img {
+    width: 60%;
+    margin-top: 15px;
+}
+.detalles-nombre {
+    margin-top: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+a.enlace-perfil .btn-añadir {
+    background: #c13f28;
+    cursor: pointer;
+}
+.profile-center {
+    width: 25%;
+    margin: 0 auto;
+    min-width: 400px;
+    box-shadow: 0 0 10px #171616;
+    background: #2051ba;
+    padding: 15px;
+    border-radius: 5px;
+}
+.profile-center .img-profile {
+    width: 230px;
+    margin: 0 auto;
+}
+.btn-menu-profile {
+    width: 100%;
+    float: left;
+    cursor: pointer;
+}
+.menu-profile {
+    width: 80%;
+    margin: 0 auto;
+}
+.cuerpo-producto {
+    height: 180px;
+    margin: 10px;
+    box-shadow: 0 0 10px #bbc;
+    overflow: hidden;
+}
+.cuerpo-producto img {
+    height: 100px;
+}
+.cuerpo-producto a {
+    cursor: pointer;
+}
+.titulo-profile {
+    background: #2051ba;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    box-shadow: 0 0 10px #171616;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+}
+.contenedor-publicacion .descripcion {
+    height: 103px;
+    overflow: hidden;
+}
+.contenedor-publicacion a {
+    cursor: pointer;
+}
+.contenedor-publicacion {
+    margin: 35px 0px;
+}
+.nota {
+    position: absolute;
+    width: 240px;
+    top: 145px;
+    padding: 0px 25px 0px 30px;
+    text-align: center;
+}
+.info-no{
+    height: 300px;
+    margin: 0 auto;
+    width: 250px;
+    background-size: cover;
+}
+.caballo{
+    background-image: url(/images/cartel-caballo.png);
+}
+.sapo{
+    background-image: url(/images/cartel-sapo.png);
+}
+.cerdo{
+    background-image: url(/images/cartel-cerdo.png);
+}
+.perro{
+    background-image: url(/images/cartel-perro.png);
+}
+.conejo{
+    background-image: url(/images/cartel-conejo.png);
+}
+.info-no.cerdo .nota{
+    top: 150px;
+}
+.info-no.sapo .nota{
+    top: 175px;
+}
+.info-no.perro .nota{
+    top: 149px;
+}
+.info-no.conejo .nota{
+    position: absolute;
+    width: 225px;
+    top: 195px;
+    padding: 0px 30px 0px 50px;
+    text-align: center;
+}

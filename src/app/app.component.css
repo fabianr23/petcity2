@@ -1,0 +1,66 @@
+.navegacion-mascotas {
+    border-radius: 10px;
+    margin-top: 20px;
+    height: 66px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.navegacion-mascotas li.nav-item.active a.nav-link {
+    color: #FFF;
+}
+.navegacion-mascotas li.nav-item {
+    margin: 0px 15px;
+}
+.header-mascotas {
+    margin-top: 15px;
+}
+.tienda-online {
+    color: #fff;
+    background: #4B4B4B;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 10px;
+    font-weight: 500;
+    height: 100%;
+    padding: 20px;
+    text-transform: initial;
+}
+.footer {
+    background: #3F3F3F;
+    height: 150px;
+    color: #fff;
+}
+.enlaces-footer {
+    width: 350px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+.enlaces-footer li {
+    float: left;
+    width: 100px;
+}
+.navegacion-mascotas li.nav-item.active a.nav-link:hover {
+    color: #3FD2BF;
+}
+a{
+    cursor: pointer;
+}
+.logo-pety {
+    min-width: 200px;
+    float: left;
+}
+.container-auth {
+    float: left;
+}
+.login-btn {
+    float: right;
+}
+.signin-btn {
+    float: right;
+    margin-left: 20px;
+}
+.logout-btn {
+    float: right;
+}
+

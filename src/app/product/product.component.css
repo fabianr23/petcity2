@@ -1,0 +1,19 @@
+.cont-product {
+    width: 100%;
+    background: #FAFAFB;
+}
+.info-prod {
+    float: left;
+}
+.lateral-prod {
+    float: left;
+}
+.img-prod img {
+    width: 100%;
+}
+.img-prod {
+    float: left;
+}
+.datos-prod {
+    float: left;
+}

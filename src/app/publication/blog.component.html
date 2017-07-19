@@ -1,0 +1,90 @@
+<div *ngIf="publication">
+<div class="barra-titulo">
+	Artículo: <strong><i>{{publication.publication.title}}</i></strong>
+</div>
+
+<div class="breadcrumbs">
+	Home/blog/{{publication.publication.title}}
+</div>
+
+<div class="container" >
+	<div class=" col-12">
+		<div class="col-5 blog-left">
+			<img *ngIf="(publication.publication.image_publication?.url != null)" class="img-responsive img-center img img-blog" src="{{publication.publication.image_publication?.url}}" alt="{{publication.title}}">
+			<img *ngIf="(publication.publication.image_publication?.url == null)" class="img-responsive img-center img img-blog" src="images/interrogacion.png" alt="{{publication.title}}">
+		</div>
+		<div class="col-7 blog-rigth">				
+			<div class="body-publication">
+				<p>{{publication.publication.body_publication}}</p>
+				<div class="blog-likes" *ngIf="(authTokenService.currentUserData)">
+					<div class="like-box">
+						<a class="link-añadir" (click)="likePublication(publication.publication, 1)">
+							<div class="img-likes">
+								<img class="img-responsive img-like" src="/images/like.fw.png" alt="Me gusta">
+								<div class="clear"></div>
+							</div>
+						</a>
+						<div class="text-like">{{publication.publication.p_votes_like}}</div>
+					</div>
+					<div class="dislike-box">
+						<a class="link-añadir" (click)="likePublication(publication.publication, 0)">
+							<div class="img-dislikes">
+								<img class="img-responsive img-dislike" src="/images/dislike.fw.png" alt="No me gusta">
+							</div>
+						</a>
+						<div class="text-dislike">{{publication.publication.p_votes_dislike}}</div>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="comentario" *ngIf="(authTokenService.currentUserData)">
+				<form (ngSubmit)="createCommentPublication(comment)" #commentForm='ngForm' enctype="multipart/form-data" id="form-newcommentblog">
+				<div class="form-group">
+					<img class="user-publication" alt="{{authTokenService.currentUserData.name_user}}" src="{{authTokenService.currentUserData.image.url}}">
+					<textarea form="form-newcommentblog" id="comentario" name="comentario" required placeholder="Agrega un comentario sobre la publicación" #body_comment_Publication='ngModel' [(ngModel)]='comment.body_comment_Publication'></textarea>
+				</div>
+         
+
+				<button type="submit" class="btn btn-primary btn-crear" [disabled]="!commentForm.form.valid">Enviar comentario</button>
+				</form>
+
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+			<div class="blog-comments" *ngFor="let comment of Comments?.publication.comment_Publications; let i = index;">
+				<div class="left-comment col-2">
+					<img class="user-publication" *ngIf="(comment.user.id == 14)" src="{{comment.user.image?.url}}" alt="{{comment.name_user}}">
+					<img class="user-publication" *ngIf="(comment.user.id != 14)" src="/images/pet-user.jpg" alt="{{comment.name_user}}">
+				</div>
+				<div class="right-comment col-10">
+					<div class="body-comment">
+						<span class="username-comment">{{comment.user.name_user}}</span>
+						{{comment.body_comment_Publication}}
+					</div>
+				
+					<div class="blog-likes" *ngIf="(authTokenService.currentUserData)">
+						<div class="like-box">
+							<a class="link-añadir" (click)="likeCommentPublication(publication.publication,comment.id, 1)">
+								<div class="img-likes">
+									<img class="img-responsive img-like" src="/images/like.fw.png" alt="Me gusta">
+									<div class="clear"></div>
+								</div>
+							</a>
+							<div class="text-like">{{comment.c_pu_votes_like}}</div>
+						</div>
+						<div class="dislike-box">
+							<a class="link-añadir" (click)="likeCommentPublication(publication.publication,comment.id, 0)">
+								<div class="img-dislikes">
+									<img class="img-responsive img-dislike" src="/images/dislike.fw.png" alt="No me gusta">
+								</div>
+							</a>
+							<div class="text-dislike">{{comment.c_pu_votes_dislike}}</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>

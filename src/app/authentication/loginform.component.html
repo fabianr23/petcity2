@@ -1,0 +1,48 @@
+<div class="barra-titulo">
+  Ingresar
+</div>
+<div class="breadcrumbs">
+  Home/Productos/login
+</div>
+
+<div class="cont-publication col-md-12">
+  <div class="info-publication col-md-12">
+    <div class="cover-background">
+      <div class="container-form col-md-5">
+        <form (ngSubmit)="onSignInSubmit()" #f="ngForm" >
+
+          <div class="form-group">
+            <label for="publication-title">
+              <h3> Ingreso a PetCity </h3>
+            </label>
+             <input id="email"
+             type="email"
+             required
+             name='email' 
+             [(ngModel)]="signInUser.email" 
+             class="form-control">
+      
+             <label for="email">Email</label> 
+         </div>
+
+          <div class="form-group">
+            <input id="password" 
+             type="password" 
+             required  
+             name='password' 
+             [(ngModel)]="signInUser.password" 
+             class="form-control">
+      
+            <label for="password">Password</label>
+          </div>
+
+           <button type="submit" 
+              [disabled]="!(f.valid)" 
+              [ngClass]="{'disabled': !(f.valid)}" 
+              class="waves-effect waves-light btn blue right">
+              Login </button>
+        </form>
+  </div>
+  
+  <div class="clear"></div>
+</div>

@@ -1,0 +1,48 @@
+.cont-product {
+    width: 100%;
+    background: #FAFAFB;
+}
+.info-prod {
+    float: left;
+}
+.lateral-prod {
+    float: left;
+}
+.img-prod img {
+    width: 100%;
+}
+.img-prod {
+    float: left;
+}
+.datos-prod {
+    float: left;
+}
+.datos-prod span.precio-home {
+    font-size: 20px;
+}
+.btns-productos {
+    padding: 0px;
+}
+.disponibles{
+    max-width: none;
+    margin: 10px 0px 0px 10px;
+    background: #00c462;
+}
+.enviar-interno{
+    margin: 20px 0px;
+}
+.cont-product .txt-producto {
+    margin-top: 28px;
+    text-transform: none;
+    height: 150px;
+}
+.cont-product .txt-producto p {
+    box-shadow: 0 0 5px #ccc;
+    padding: 10px;
+}
+a{
+    cursor: pointer;
+}
+.img{
+    width: 100%;
+}

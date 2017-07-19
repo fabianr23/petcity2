@@ -1,0 +1,18 @@
+<div *ngIf="(authTokenService.currentUserData)" class="col l8 s12" >
+  <div class="banner-users">
+  <div class="tit-banner-company">
+    Usuarios
+  </div>
+</div>
+<div class="breadcrumbs">
+  Home / Usuarios / {{authTokenService.currentUserData.name_user}}
+</div>
+<div class="container-profile col-md-12">
+  <div class="col-md-5">
+    <app-menu-profile> </app-menu-profile>
+  </div>
+</div>
+
+<div *ngIf="!(authTokenService.currentUserData)" class="col l8 s12" >
+  <app-login-form> </app-login-form> 
+</div>
